@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl1w0x7jma8d1"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_hygl0"]
+[ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://finalfrieren.png" id="2_ax7xi"]
+[ext_resource type="PackedScene" uid="uid://cr7nypxqd3pmn" path="res://zoltaark.tscn" id="3_e4sd4"]
+[ext_resource type="Texture2D" uid="uid://c38fmq8al6qe" path="res://Faceset.png" id="4_61vse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gses8"]
+radius = 305.073
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqu3"]
+size = Vector2(38.8235, 37.0589)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.7, 1.7)
+script = ExtResource("1_hygl0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 10)
+shape = SubResource("CircleShape2D_gses8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node"]
+visible = false
+position = Vector2(1244, 647)
+scale = Vector2(1.7, 1.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/CharacterBody2D"]
+texture = ExtResource("4_61vse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CharacterBody2D"]
+position = Vector2(0.588135, 0.294037)
+shape = SubResource("RectangleShape2D_2aqu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_ax7xi")
+region_rect = Rect2(9, 0, 77, 48)
+
+[node name="RayCast2D" parent="." instance=ExtResource("3_e4sd4")]
+position = Vector2(-32.9412, -47.6471)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

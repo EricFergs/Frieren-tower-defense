@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://oej01shgmt41"]
+
+[ext_resource type="Script" path="res://path_follow_2d.gd" id="1_6bd3h"]
+[ext_resource type="PackedScene" uid="uid://bfclo6c8ooaul" path="res://enemy1.tscn" id="2_vm5mr"]
+
+[sub_resource type="Curve2D" id="Curve2D_avyn7"]
+bake_interval = 23.93
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4.26929, 16, 0, 0, 0, 0, 68.199, -188, 0, 0, 0, 0, -19.7043, -296, 0, 0, 0, 0, -199.507, -448, 0, 0, 0, 0, -183.524, -546, 0, 0, 0, 0, -47.6736, -580, 0, 0, 0, 0, 48.2209, -644, 0, 0, 0, 0, 46.2231, -750, 0, 0, 0, 0, 134.126, -786, 0, 0, 0, 0, 249.999, -750, 0, 0, 0, 0, 289.955, -672, 0, 0, 0, 0, 248.001, -550, 0, 0, 0, 0, 240.01, -412, 0, 0, 0, 0, 359.878, -392, 0, 0, 0, 0, 471.755, -434, 0, 0, 0, 0, 531.689, -524, 0, 0, 0, 0, 613.599, -572, 0, 0, 0, 0, 735.465, -582, 0, 0, 0, 0, 905.278, -586, 0, 0, 0, 0, 1097.07, -584, 0, 0, 0, 0, 1282.86, -586)
+}
+point_count = 21
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(483.726, 925)
+scale = Vector2(1.0011, 1)
+curve = SubResource("Curve2D_avyn7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(4.26929, 16)
+rotates = false
+loop = false
+script = ExtResource("1_6bd3h")
+
+[node name="CharacterBody2D" parent="PathFollow2D" instance=ExtResource("2_vm5mr")]
+position = Vector2(-4.26929, -16)

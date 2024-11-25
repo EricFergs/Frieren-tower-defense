@@ -1,0 +1,27 @@
+{
+  "waves": [
+	{
+	  "wave_number": 1,
+	  "duration": 15,
+	  "enemies": [
+		{ "type": "fireman", "spawn_time": 15, "count" : 1},
+		{ "type": "fireman", "spawn_time": 14.5, "count" : 1},
+		{ "type": "fireman", "spawn_time": 14.3, "count" : 1},
+		{ "type": "fireman", "spawn_time": 14, "count" : 1},
+		{ "type": "fireman", "spawn_time": 8, "count" : 1},
+		{ "type": "fireman", "spawn_time": 7.5, "count" : 1},
+		{ "type": "fireman", "spawn_time": 5, "count" : 1}
+	  ]
+	},
+	{
+	  "wave_number": 2,
+	  "duration": 10,
+	  "enemies": [
+		{ "type": "fireman", "spawn_time": 8, "count" : 1},
+		{ "type": "fireman", "spawn_time": 7.5, "count" : 1},
+		{ "type": "fireman", "spawn_time": 5, "count" : 1}
+	  ]
+	}
+  ],
+  "wave_count" : 2
+}
