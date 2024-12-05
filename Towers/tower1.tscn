@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl1w0x7jma8d1"]
+[gd_scene load_steps=9 format=3 uid="uid://cl1w0x7jma8d1"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_hygl0"]
 [ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://finalfrieren.png" id="2_ax7xi"]
 [ext_resource type="PackedScene" uid="uid://cr7nypxqd3pmn" path="res://zoltaark.tscn" id="3_e4sd4"]
 [ext_resource type="Texture2D" uid="uid://c38fmq8al6qe" path="res://Faceset.png" id="4_61vse"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsv68"]
+bg_color = Color(0.0448608, 0.957031, 0.935652, 1)
+corner_radius_top_left = 400
+corner_radius_top_right = 400
+corner_radius_bottom_right = 400
+corner_radius_bottom_left = 400
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gses8"]
 radius = 305.073
@@ -11,10 +18,23 @@ radius = 305.073
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqu3"]
 size = Vector2(38.8235, 37.0589)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5lsk1"]
+radius = 42.357
+
 [node name="Node2D" type="Node2D"]
 scale = Vector2(1.7, 1.7)
 script = ExtResource("1_hygl0")
 metadata/_edit_group_ = true
+
+[node name="Range" type="Panel" parent="."]
+modulate = Color(0.179626, 0.769925, 0.851563, 0.431373)
+texture_filter = 1
+offset_left = -296.471
+offset_top = -291.765
+offset_right = -256.471
+offset_bottom = -251.765
+scale = Vector2(15.0104, 15.0104)
+theme_override_styles/panel = SubResource("StyleBoxFlat_lsv68")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -48,5 +68,12 @@ region_rect = Rect2(9, 0, 77, 48)
 [node name="RayCast2D" parent="." instance=ExtResource("3_e4sd4")]
 position = Vector2(-32.9412, -47.6471)
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.588235, -2.35294)
+scale = Vector2(0.583994, 1.04706)
+shape = SubResource("CircleShape2D_5lsk1")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -10,29 +10,23 @@ var enemies_in_range = []
 
 
 var selected = false
+var placed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.start()
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if selected:
-		followMouse()
-		
+	pass
+	
+func is_placed() -> void:
+	$Range.visible = false
+	timer.start()
+
 	
 	
 
-func followMouse():
-	position = get_global_mouse_position()
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			selected = true
-		else:
-			selected = false
 
 func attackEnemy():
 	var firstEnemy = null
@@ -63,7 +57,12 @@ func attackEnemy():
 		
 
 			
-	
+func make_red():
+	$Range.modulate = Color(255,0,0,0.3)
+
+func make_blue():
+	$Range.modulate = Color(0.18,0.77,0.85,0.431)
+		
 	
 
 
