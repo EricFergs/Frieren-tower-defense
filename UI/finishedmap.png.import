@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4sbys2c8oxa"
-path="res://.godot/imported/dark magetrans.png-0c18f6063ca709c5ac0516767540a97e.ctex"
+uid="uid://bkrhogro780mb"
+path="res://.godot/imported/finishedmap.png-007f45d0286cbf5c86bf5b2d5dad0fc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dark magetrans.png"
-dest_files=["res://.godot/imported/dark magetrans.png-0c18f6063ca709c5ac0516767540a97e.ctex"]
+source_file="res://UI/finishedmap.png"
+dest_files=["res://.godot/imported/finishedmap.png-007f45d0286cbf5c86bf5b2d5dad0fc8.ctex"]
 
 [params]
 

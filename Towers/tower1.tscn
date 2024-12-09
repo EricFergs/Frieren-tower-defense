@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cl1w0x7jma8d1"]
+[gd_scene load_steps=8 format=3 uid="uid://cl1w0x7jma8d1"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_hygl0"]
-[ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://finalfrieren.png" id="2_ax7xi"]
-[ext_resource type="Script" path="res://collision_shape_2d.gd" id="2_h2xoc"]
-[ext_resource type="PackedScene" uid="uid://cr7nypxqd3pmn" path="res://zoltaark.tscn" id="3_e4sd4"]
-[ext_resource type="Texture2D" uid="uid://c38fmq8al6qe" path="res://Faceset.png" id="4_61vse"]
+[ext_resource type="Script" path="res://Towers/node_2d.gd" id="1_hygl0"]
+[ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://Towers/finalfrieren.png" id="2_ax7xi"]
+[ext_resource type="Script" path="res://Towers/collision_shape_2d.gd" id="2_h2xoc"]
+[ext_resource type="PackedScene" uid="uid://cr7nypxqd3pmn" path="res://Towers/zoltaark.tscn" id="3_e4sd4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsv68"]
 bg_color = Color(0.0448608, 0.957031, 0.935652, 1)
@@ -15,9 +14,6 @@ corner_radius_bottom_left = 400
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gses8"]
 radius = 250.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqu3"]
-size = Vector2(38.8235, 37.0589)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lsk1"]
 radius = 42.357
@@ -47,20 +43,6 @@ script = ExtResource("2_h2xoc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-
-[node name="Node" type="Node" parent="."]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node"]
-visible = false
-position = Vector2(1244, 647)
-scale = Vector2(1.7, 1.7)
-
-[node name="Sprite2D" type="Sprite2D" parent="Node/CharacterBody2D"]
-texture = ExtResource("4_61vse")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/CharacterBody2D"]
-position = Vector2(0.588135, 0.294037)
-shape = SubResource("RectangleShape2D_2aqu3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

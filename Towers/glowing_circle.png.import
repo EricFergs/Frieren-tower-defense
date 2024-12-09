@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkrhogro780mb"
-path="res://.godot/imported/finishedmap.png-2ed92ac58e08fc017ea0a37b20b39aaf.ctex"
+uid="uid://dq03bjbe10bc3"
+path="res://.godot/imported/glowing_circle.png-b7f390a8d047cd1bde058e36c82ace9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://finishedmap.png"
-dest_files=["res://.godot/imported/finishedmap.png-2ed92ac58e08fc017ea0a37b20b39aaf.ctex"]
+source_file="res://Towers/glowing_circle.png"
+dest_files=["res://.godot/imported/glowing_circle.png-b7f390a8d047cd1bde058e36c82ace9c.ctex"]
 
 [params]
 

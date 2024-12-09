@@ -1,7 +1,7 @@
 extends Node2D
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
-const ENEMY_1 = preload("res://Path1.tscn")
+const ENEMY_1 = preload("res://UI/Path1.tscn")
 @onready var character_body_2d: CharacterBody2D = $"../CharacterBody2D"
 
 var json = JSON.new()
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	_check_spawn_events()
 
 func _loadJSON():
-	var file = FileAccess.open("res://waveStruct.json", FileAccess.READ)
+	var file = FileAccess.open("res://UI//waveStruct.json", FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	return content

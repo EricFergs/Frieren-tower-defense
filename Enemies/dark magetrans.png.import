@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byhfh4bwtyx8m"
-path="res://.godot/imported/TilesetField.png-31bd28b0a82f1e9a3a3f8ed8c7ceeabc.ctex"
+uid="uid://4sbys2c8oxa"
+path="res://.godot/imported/dark magetrans.png-f6cb54c2192e9fe014661ce97e0b4f06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetField.png"
-dest_files=["res://.godot/imported/TilesetField.png-31bd28b0a82f1e9a3a3f8ed8c7ceeabc.ctex"]
+source_file="res://Enemies/dark magetrans.png"
+dest_files=["res://.godot/imported/dark magetrans.png-f6cb54c2192e9fe014661ce97e0b4f06.ctex"]
 
 [params]
 

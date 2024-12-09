@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cr7nypxqd3pmn"]
 
 [ext_resource type="Script" path="res://Towers/ray_cast_2d.gd" id="1_3ysl3"]
-[ext_resource type="Texture2D" uid="uid://dq03bjbe10bc3" path="res://glowing_circle.png" id="2_b4qpw"]
+[ext_resource type="Texture2D" uid="uid://dq03bjbe10bc3" path="res://Towers/glowing_circle.png" id="2_b4qpw"]
+
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wnmp2"]
 blend_mode = 1
