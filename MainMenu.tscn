@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvku5accgosi"]
+
+[ext_resource type="Texture2D" uid="uid://bkrhogro780mb" path="res://UI/finishedmap.png" id="1_gywuo"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="2_4n7qs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gywuo")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1922.0
+offset_bottom = 1078.0
+script = ExtResource("2_4n7qs")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 76.0
+offset_right = 1766.0
+offset_bottom = 989.0
+color = Color(0.356, 0.703, 0.482, 0.95)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 243.0
+offset_right = 1587.0
+offset_bottom = 367.0
+theme_override_font_sizes/font_size = 90
+text = "Welcome to the Main Menu"
+
+[node name="start" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 602.0
+offset_right = 890.0
+offset_bottom = 706.0
+theme_override_font_sizes/font_size = 70
+text = "Start game"
+
+[node name="quit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1123.0
+offset_top = 602.0
+offset_right = 1500.0
+offset_bottom = 706.0
+theme_override_font_sizes/font_size = 70
+text = "Quit Game"
+
+[connection signal="pressed" from="Control/start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/quit" to="Control" method="_on_quit_pressed"]
