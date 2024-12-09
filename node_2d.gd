@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var range = 50
+
 var enemies_in_range = []
 @onready var character_body_2d: CharacterBody2D = get_node("/root/Node/CharacterBody2D")
 @onready var timer: Timer = $Timer
@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	
 func is_placed() -> void:
 	$Range.visible = false
+	$Area2D/CollisionShape2D.hide()
 	timer.start()
 
 	
@@ -59,10 +60,12 @@ func attackEnemy():
 
 			
 func make_red():
-	$Range.modulate = Color(255,0,0,0.3)
+	$Area2D/CollisionShape2D.make_red()
+	#$Range.modulate = Color(255,0,0,0.3)
 
 func make_blue():
-	$Range.modulate = Color(0.18,0.77,0.85,0.431)
+	$Area2D/CollisionShape2D.make_blue()
+	#$Range.modulate = Color(0.18,0.77,0.85,0.431)
 		
 	
 

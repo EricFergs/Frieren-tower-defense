@@ -11,4 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$ProgressBar.value = health
 	if health == 0:
+		Global.money += 10
 		self.queue_free()
+		

@@ -33,7 +33,6 @@ func follow_mouse():
 func _on_texture_button_pressed() -> void:
 	if Global.money >= 10:
 		Global.money -= 10
-		money.text = "Money: " + str(Global.money)
 		if not placing:  # Start placing the tower
 			tower_instance = tower_scene.instantiate()  # Create an instance of the tower
 			placing = true  # Set placing to true
@@ -54,4 +53,4 @@ func _input(event):
 				placing = false
 				tower_instance = null  # Clear the reference to the tower instance
 				Global.money += 10
-				money.text = "Money: " + str(Global.money)
+				

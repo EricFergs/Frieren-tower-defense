@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl1w0x7jma8d1"]
+[gd_scene load_steps=10 format=3 uid="uid://cl1w0x7jma8d1"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_hygl0"]
 [ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://finalfrieren.png" id="2_ax7xi"]
+[ext_resource type="Script" path="res://collision_shape_2d.gd" id="2_h2xoc"]
 [ext_resource type="PackedScene" uid="uid://cr7nypxqd3pmn" path="res://zoltaark.tscn" id="3_e4sd4"]
 [ext_resource type="Texture2D" uid="uid://c38fmq8al6qe" path="res://Faceset.png" id="4_61vse"]
 
@@ -13,7 +14,7 @@ corner_radius_bottom_right = 400
 corner_radius_bottom_left = 400
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gses8"]
-radius = 305.073
+radius = 250.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2aqu3"]
 size = Vector2(38.8235, 37.0589)
@@ -27,6 +28,7 @@ script = ExtResource("1_hygl0")
 metadata/_edit_group_ = true
 
 [node name="Range" type="Panel" parent="."]
+visible = false
 modulate = Color(0.179626, 0.769925, 0.851563, 0.431373)
 texture_filter = 1
 offset_left = -296.471
@@ -41,6 +43,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lsv68")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, 10)
 shape = SubResource("CircleShape2D_gses8")
+script = ExtResource("2_h2xoc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

@@ -1,9 +1,8 @@
-[gd_scene load_steps=91 format=3 uid="uid://dhu8n5urx3mmh"]
+[gd_scene load_steps=90 format=3 uid="uid://dhu8n5urx3mmh"]
 
 [ext_resource type="Texture2D" uid="uid://bkrhogro780mb" path="res://finishedmap.png" id="3_chf5s"]
 [ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://finalfrieren.png" id="4_5wy6q"]
 [ext_resource type="Script" path="res://waves.gd" id="6_kr3ql"]
-[ext_resource type="Texture2D" uid="uid://c38fmq8al6qe" path="res://Faceset.png" id="7_e7h08"]
 [ext_resource type="Script" path="res://control.gd" id="8_2im18"]
 [ext_resource type="Script" path="res://money.gd" id="8_nwk10"]
 
@@ -1107,28 +1106,28 @@ label_settings = SubResource("LabelSettings_nut6n")
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1603.0
-offset_top = 448.0
-offset_right = 1603.0
-offset_bottom = 448.0
-scale = Vector2(3, 3)
+offset_left = 1651.0
+offset_top = 520.0
+offset_right = 1651.0
+offset_bottom = 520.0
+scale = Vector2(2.12, 2.12)
 script = ExtResource("8_2im18")
 metadata/_edit_group_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -3.5
-offset_top = 0.5
-offset_right = 36.5
-offset_bottom = 40.5
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 57.0
+offset_bottom = 64.0
 scale = Vector2(2.13741, 4.1933)
 
 [node name="ColorRect" type="ColorRect" parent="Control/Panel"]
 texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 60.0
+offset_bottom = 63.0
 theme = SubResource("Theme_v3ll7")
 color = Color(0.192157, 0, 0.113725, 0.513726)
 
@@ -1146,31 +1145,31 @@ ignore_texture_size = true
 
 [node name="TextureButton2" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton3" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton4" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton5" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton6" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton7" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="TextureButton8" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_e7h08")
+texture_normal = ExtResource("4_5wy6q")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1655.0
