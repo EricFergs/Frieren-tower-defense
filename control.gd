@@ -1,5 +1,6 @@
 extends Control
 
+@onready var tower_areas: Area2D = $"../TowerAreas"
 
 @onready var tower_scene: PackedScene = preload("res://Towers/tower1.tscn")  # Replace with your actual tower scene path
 var placing = false
@@ -15,7 +16,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if placing:
+		if tower_areas.has_overlapping_bodies():
+			tower_instance.make_red()
+			placeable = false
+		else:
+			tower_instance.make_blue()
+			placeable = true
 		follow_mouse()
+		
 		
 func follow_mouse():
 	if tower_instance:
@@ -45,15 +53,5 @@ func _input(event):
 				tower_instance.queue_free()
 				placing = false
 				tower_instance = null  # Clear the reference to the tower instance
-
-
-func _on_tower_areas_body_entered(body: Node2D) -> void:
-	if tower_instance and not body.is_in_group("Enemy"):
-		tower_instance.make_red()
-		placeable = false
-
-
-func _on_tower_areas_body_exited(body: Node2D) -> void:
-	if tower_instance and not body.is_in_group("Enemy"):
-		tower_instance.make_blue()
-		placeable = true
+				Global.money += 10
+				money.text = "Money: " + str(Global.money)
