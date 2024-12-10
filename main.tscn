@@ -1,7 +1,8 @@
-[gd_scene load_steps=90 format=3 uid="uid://dhu8n5urx3mmh"]
+[gd_scene load_steps=91 format=3 uid="uid://dhu8n5urx3mmh"]
 
 [ext_resource type="Texture2D" uid="uid://bkrhogro780mb" path="res://UI/finishedmap.png" id="3_chf5s"]
 [ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://Towers/finalfrieren.png" id="4_5wy6q"]
+[ext_resource type="Texture2D" uid="uid://civd1qo2qpnvk" path="res://Towers/purplemage.png" id="5_iblti"]
 [ext_resource type="Script" path="res://UI/waves.gd" id="6_kr3ql"]
 [ext_resource type="Script" path="res://UI/control.gd" id="8_2im18"]
 [ext_resource type="Script" path="res://UI/money.gd" id="8_nwk10"]
@@ -1138,14 +1139,14 @@ offset_right = 80.0
 offset_bottom = 164.0
 columns = 2
 
-[node name="TextureButton" type="TextureButton" parent="Control/GridContainer"]
+[node name="Frieren" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_5wy6q")
 ignore_texture_size = true
 
-[node name="TextureButton2" type="TextureButton" parent="Control/GridContainer"]
+[node name="Purplemage" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("4_5wy6q")
+texture_normal = ExtResource("5_iblti")
 
 [node name="TextureButton3" type="TextureButton" parent="Control/GridContainer"]
 layout_mode = 2
@@ -1213,6 +1214,7 @@ polygon = PackedVector2Array(-11.9447, 11.4767, -11.9219, -12.3236, 10.0684, -11
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [connection signal="timeout" from="Waves/Timer" to="Waves" method="_on_timer_timeout"]
-[connection signal="pressed" from="Control/GridContainer/TextureButton" to="Control" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Frieren" to="Control" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Purplemage" to="Control" method="_on_purplemage_pressed"]
 [connection signal="body_entered" from="TowerAreas" to="Control" method="_on_tower_areas_body_entered"]
 [connection signal="body_exited" from="TowerAreas" to="Control" method="_on_tower_areas_body_exited"]

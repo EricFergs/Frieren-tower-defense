@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$ProgressBar.value = health
-	if health == 0:
+	if health <= 0:
 		Global.money += 10
-		self.queue_free()
+		get_parent().get_parent().queue_free()
 		

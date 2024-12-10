@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://70ff173dpyfe"]
+
+[ext_resource type="Script" path="res://fireball.gd" id="1_da7e0"]
+[ext_resource type="Texture2D" uid="uid://dq03bjbe10bc3" path="res://Towers/glowing_circle.png" id="1_hcbwr"]
+
+[sub_resource type="Curve" id="Curve_q8tlr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.186813), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kmr8e"]
+colors = PackedColorArray(1, 0.843362, 0.788262, 1, 0.835718, 3.22476e-06, 7.70092e-07, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4gyt"]
+radius = 17.0294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3xjc"]
+radius = 135.004
+
+[node name="Fireball" type="Node2D"]
+script = ExtResource("1_da7e0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(100.714, 0.435294, 0, 1)
+texture = ExtResource("1_hcbwr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 90
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 111.11
+initial_velocity_max = 323.23
+scale_amount_min = 5.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_q8tlr")
+color = Color(1, 0, 0, 1)
+color_initial_ramp = SubResource("Gradient_kmr8e")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_x4gyt")
+
+[node name="deletion" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
+[node name="Explosion radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion radius"]
+shape = SubResource("CircleShape2D_e3xjc")
+
+[node name="lifetime" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="deletion" to="." method="_on_deletion_timeout"]
+[connection signal="timeout" from="lifetime" to="." method="_on_lifetime_timeout"]

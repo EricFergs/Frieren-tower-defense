@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://4sbys2c8oxa" path="res://Enemies/dark magetrans.png" id="1_67jt6"]
 [ext_resource type="Script" path="res://Enemies/enemy_1.gd" id="1_swflq"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x15hf"]
 size = Vector2(73, 106)
 

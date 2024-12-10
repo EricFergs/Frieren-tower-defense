@@ -5,9 +5,10 @@ extends Control
 @onready var tower_scene: PackedScene = preload("res://Towers/tower1.tscn")  # Replace with your actual tower scene path
 var placing = false
 var tower_instance: Node2D = null 	
-
+const PURPLEMAGE = preload("res://purplemage.tscn")
 @onready var money: Label = $"../Money"
 var placeable = false
+var current_cost = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,6 +34,7 @@ func follow_mouse():
 func _on_texture_button_pressed() -> void:
 	if Global.money >= 10:
 		Global.money -= 10
+		current_cost = 10
 		if not placing:  # Start placing the tower
 			tower_instance = tower_scene.instantiate()  # Create an instance of the tower
 			placing = true  # Set placing to true
@@ -52,5 +54,17 @@ func _input(event):
 				tower_instance.queue_free()
 				placing = false
 				tower_instance = null  # Clear the reference to the tower instance
-				Global.money += 10
+				Global.money += current_cost
 				
+
+
+func _on_purplemage_pressed() -> void:
+	if Global.money >= 30:
+		Global.money -= 30
+		current_cost = 30
+		if not placing:  # Start placing the tower
+			tower_instance = PURPLEMAGE.instantiate()  # Create an instance of the tower
+			placing = true  # Set placing to true
+			placeable = true
+			get_tree().current_scene.add_child(tower_instance) # Add the tower instance to the scene
+		# The tower follows the mouse in _process()
