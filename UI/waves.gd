@@ -56,6 +56,7 @@ func _handleWaves(json):
 		_handleEnemies(wave[i]["enemies"])
 		
 		await timer.timeout
+		Global.money += Global.mimic * 10
 		
 
 func _handleEnemies(enemies):

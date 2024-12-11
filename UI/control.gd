@@ -7,6 +7,7 @@ var placing = false
 var tower_instance: Node2D = null 	
 const PURPLEMAGE = preload("res://Towers/purplemage.tscn")
 const ICEMAGE = preload("res://Towers/icemage.tscn")
+const MIMIC = preload("res://mimic.tscn")
 
 var placeable = false
 var current_cost = 10
@@ -84,3 +85,14 @@ func _on_icemage_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	Global.money += 1000
+
+
+func _on_mimic_pressed() -> void:
+	if Global.money >= 50:
+		Global.money -= 50
+		current_cost = 50
+		if not placing:
+			tower_instance = MIMIC.instantiate()  # Create an instance of the tower
+			placing = true  # Set placing to true
+			placeable = true
+			get_tree().current_scene.add_child(tower_instance) # Add the tower instance to the scene

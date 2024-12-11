@@ -6,6 +6,7 @@ extends Node
 func _ready() -> void:
 	Global.money = Global._money
 	Global.health = Global._health
+	Global.mimic = Global._mimic
 	health.text =  "Health: " + str(Global.health)
 
 
