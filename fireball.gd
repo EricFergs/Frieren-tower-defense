@@ -38,14 +38,14 @@ func _explode():
 		explode_once = true
 	
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if not attackonce:
 		attackonce = true
 		_explode()
 		attack_enemy = false
 		var enemies = $"Explosion radius".get_overlapping_bodies()
 		for e in enemies:
-			e.health -= 2
+			e.health -= 4
 		
 		
 	

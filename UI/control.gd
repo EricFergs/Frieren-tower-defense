@@ -5,8 +5,8 @@ extends Control
 @onready var tower_scene: PackedScene = preload("res://Towers/tower1.tscn")  # Replace with your actual tower scene path
 var placing = false
 var tower_instance: Node2D = null 	
-const PURPLEMAGE = preload("res://purplemage.tscn")
-@onready var money: Label = $"../Money"
+const PURPLEMAGE = preload("res://Towers/purplemage.tscn")
+
 var placeable = false
 var current_cost = 10
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if placing:
 		if tower_areas.has_overlapping_bodies():
 			tower_instance.make_red()

@@ -12,7 +12,7 @@ func _ready():
 	#if event is InputEventMouseButton:
 		#self.is_casting = event.pressed
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	force_raycast_update()
 	var cast_point := target_position
 	

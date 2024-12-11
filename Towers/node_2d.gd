@@ -7,7 +7,7 @@ var enemies_in_range = []
 @onready var timer: Timer = $Timer
 @onready var area_2d: Area2D = $Area2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-var damage = 5
+var damage = 10
 
 var selected = false
 var placed = false
@@ -51,7 +51,7 @@ func attackEnemy():
 		ray_cast_2d.set_is_casting(true)
 		#var local_pos = ray_cast_2d.get_parent().to_local(enemy_pos)
 		#ray_cast_2d.set_target_position(local_pos)
-		firstEnemy.health -= 5
+		firstEnemy.health -= damage
 		
 		#ray_cast_2d.set_is_casting(false)
 		

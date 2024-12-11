@@ -3,10 +3,24 @@ extends Node2D
 @onready var label: Label = $Label
 const ENEMY_1 = preload("res://UI/Path1.tscn")
 @onready var character_body_2d: CharacterBody2D = $"../CharacterBody2D"
+const greenmage = preload("res://Enemies/enemy1.tscn")
+const violetmage = preload("res://violetmage.tscn")
+const redmage = preload("res://redmage.tscn")
+const wingedmage = preload("res://wingedmage.tscn")
+const yellowmage = preload("res://yellowmage.tscn")
+const bluemage = preload("res://bluemage.tscn")
 
 var json = JSON.new()
 var currWave = 0
 var events = []
+var types = {
+	"greenmage": greenmage,
+	"violetmage":violetmage,
+	"redmage": redmage,
+	"wingedmage":wingedmage,
+	"yellowmage":yellowmage,
+	"bluemage":bluemage
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,7 +63,12 @@ func _handleEnemies(enemies):
 func _check_spawn_events():
 	if events:
 		while events[0]["spawn_time"] >= timer.get_time_left():
+			
 			var e_instance = ENEMY_1.instantiate()
+			var path = e_instance.get_child(0)
+			var type = types[events[0]["type"]]
+			var path_enemy = type.instantiate()
+			path.add_child(path_enemy)
 			character_body_2d.add_child(e_instance)
 			events.pop_front()
 			if not events:

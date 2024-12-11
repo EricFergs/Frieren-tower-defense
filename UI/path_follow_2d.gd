@@ -1,5 +1,5 @@
 extends PathFollow2D
-@onready var label: Label = $"../../../Label"
+
 
 var speed = 0.12
 
@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		
 func end_reached():	
 	#set_process(false) 
-	var currHealth = int(label.text.split(" ")[1]) - 1
-	label.text = "Health: " + str(currHealth)
+	get_tree().current_scene.updatehealth(get_child(0).health)
 	get_parent().queue_free()
+
+	

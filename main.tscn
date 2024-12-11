@@ -1,5 +1,6 @@
-[gd_scene load_steps=91 format=3 uid="uid://dhu8n5urx3mmh"]
+[gd_scene load_steps=92 format=3 uid="uid://dhu8n5urx3mmh"]
 
+[ext_resource type="Script" path="res://mainlogic.gd" id="1_lmu3f"]
 [ext_resource type="Texture2D" uid="uid://bkrhogro780mb" path="res://UI/finishedmap.png" id="3_chf5s"]
 [ext_resource type="Texture2D" uid="uid://cks3toutnb4y6" path="res://Towers/finalfrieren.png" id="4_5wy6q"]
 [ext_resource type="Texture2D" uid="uid://civd1qo2qpnvk" path="res://Towers/purplemage.png" id="5_iblti"]
@@ -1081,6 +1082,7 @@ glow_hdr_luminance_cap = 2.0
 glow_map_strength = 0.0
 
 [node name="Node" type="Node"]
+script = ExtResource("1_lmu3f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_chf5s")
@@ -1172,11 +1174,11 @@ texture_normal = ExtResource("4_5wy6q")
 layout_mode = 2
 texture_normal = ExtResource("4_5wy6q")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1655.0
-offset_top = 24.0
-offset_right = 1889.0
-offset_bottom = 81.0
+[node name="Health" type="Label" parent="."]
+offset_left = 1585.0
+offset_top = 26.0
+offset_right = 1830.0
+offset_bottom = 95.0
 text = "Health: 10"
 label_settings = SubResource("LabelSettings_lpfdo")
 

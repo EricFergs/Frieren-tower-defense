@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://d03bclrclxlyy"]
 
-[ext_resource type="Script" path="res://purplemage.gd" id="1_rs8cw"]
-[ext_resource type="Texture2D" uid="uid://civd1qo2qpnvk" path="res://Towers/purplemage.png" id="2_nuqbg"]
-[ext_resource type="Script" path="res://Towers/collision_shape_2d.gd" id="2_x6po7"]
-[ext_resource type="PackedScene" uid="uid://70ff173dpyfe" path="res://fireball.tscn" id="4_obvsk"]
+[ext_resource type="Script" path="res://Towers/purplemage.gd" id="1_h6htx"]
+[ext_resource type="Script" path="res://Towers/purplecollision.gd" id="2_wsarl"]
+[ext_resource type="Texture2D" uid="uid://civd1qo2qpnvk" path="res://Towers/purplemage.png" id="3_d20ar"]
+[ext_resource type="PackedScene" uid="uid://70ff173dpyfe" path="res://fireball.tscn" id="4_d2i6w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsv68"]
 bg_color = Color(0.0448608, 0.957031, 0.935652, 1)
@@ -20,7 +20,7 @@ radius = 42.357
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(1.7, 1.7)
-script = ExtResource("1_rs8cw")
+script = ExtResource("1_h6htx")
 metadata/_edit_group_ = true
 
 [node name="Range" type="Panel" parent="."]
@@ -39,7 +39,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lsv68")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, 10)
 shape = SubResource("CircleShape2D_gses8")
-script = ExtResource("2_x6po7")
+script = ExtResource("2_wsarl")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
@@ -47,7 +47,7 @@ wait_time = 2.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_nuqbg")
+texture = ExtResource("3_d20ar")
 region_rect = Rect2(9, 0, 77, 48)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -58,7 +58,7 @@ position = Vector2(-0.588235, -2.35294)
 scale = Vector2(0.583994, 1.04706)
 shape = SubResource("CircleShape2D_5lsk1")
 
-[node name="Fireball" parent="." instance=ExtResource("4_obvsk")]
+[node name="Fireball" parent="." instance=ExtResource("4_d2i6w")]
 visible = false
 position = Vector2(-28.8235, -11.7647)
 scale = Vector2(1.70588, 1.70588)

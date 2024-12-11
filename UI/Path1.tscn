@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://oej01shgmt41"]
+[gd_scene load_steps=3 format=3 uid="uid://oej01shgmt41"]
 
 [ext_resource type="Script" path="res://UI/path_follow_2d.gd" id="1_yffqo"]
-[ext_resource type="PackedScene" uid="uid://bfclo6c8ooaul" path="res://Enemies/enemy1.tscn" id="2_1p8jl"]
 
 [sub_resource type="Curve2D" id="Curve2D_avyn7"]
 bake_interval = 23.93
@@ -20,6 +19,3 @@ position = Vector2(4.26929, 16)
 rotates = false
 loop = false
 script = ExtResource("1_yffqo")
-
-[node name="CharacterBody2D" parent="PathFollow2D" instance=ExtResource("2_1p8jl")]
-position = Vector2(-4.26929, -16)
