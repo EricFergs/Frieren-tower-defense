@@ -39,17 +39,38 @@ func attackEnemy():
 			if distance > maxProgress:
 				firstEnemy = body
 				maxProgress = distance
-			
-	if firstEnemy:
-		pass
-		
 	
+	if firstEnemy:
+		$Iceattack.visible = true
+		var hit = $Iceattack/AttackRange.get_overlapping_bodies()
+		for e in hit:
+			e.ice_health -=  randf_range(0.0, 0.2)
+		if global_position.x < firstEnemy.global_position.x: # they're to the right
+			#rotation = 0
+			scale.x = -1.7
+			
+			
+		else: # they are to the left
+			#var angle_to_enemy = global_position.angle_to_point(firstEnemy.global_position)
+			#var angle_degrees = rad_to_deg(angle_to_enemy)
+			#print(angle_degrees)
+			#if angle_degrees >= -70.0 and angle_degrees <= 70.0:
+				#rotation = angle_to_enemy
+			scale.x = 1.7
+	else:
+		$Iceattack.visible = false
 		
+			
+
+			
+			
+
+	
 
 			
 func make_red():
 	$Area2D/CollisionShape2D.make_red()
-	#$Range.modulate = Color(255,0,0,0.3)
+	#$Range.modulate = Color(255,0,0,0.3)	
 
 func make_blue():
 	$Area2D/CollisionShape2D.make_blue()

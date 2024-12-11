@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf5q0jw8vhw3h"]
+[gd_scene load_steps=9 format=3 uid="uid://cf5q0jw8vhw3h"]
 
 [ext_resource type="Texture2D" uid="uid://pssda1gumrfm" path="res://Towers/icemage.png" id="1_uhiuj"]
 [ext_resource type="Script" path="res://icemage.gd" id="1_wg8d0"]
@@ -18,7 +18,10 @@ radius = 130.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5lsk1"]
 radius = 42.357
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_n8x7a"]
+radius = 66.0947
+
+[node name="Icemage" type="Node2D"]
 scale = Vector2(1.7, 1.7)
 script = ExtResource("1_wg8d0")
 metadata/_edit_group_ = true
@@ -42,7 +45,7 @@ shape = SubResource("CircleShape2D_gses8")
 script = ExtResource("2_vii46")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -58,7 +61,14 @@ position = Vector2(-0.588235, -2.35294)
 scale = Vector2(0.583994, 1.04706)
 shape = SubResource("CircleShape2D_5lsk1")
 
-[node name="Node2D" parent="." instance=ExtResource("4_ub88v")]
+[node name="Iceattack" parent="." instance=ExtResource("4_ub88v")]
+visible = false
 position = Vector2(-40.5882, 5.29412)
+
+[node name="AttackRange" type="Area2D" parent="Iceattack"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Iceattack/AttackRange"]
+position = Vector2(-54.1176, 0.588235)
+shape = SubResource("CircleShape2D_n8x7a")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
