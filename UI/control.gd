@@ -33,9 +33,9 @@ func follow_mouse():
 
 
 func _on_texture_button_pressed() -> void:
-	if Global.money >= 10:
-		Global.money -= 10
-		current_cost = 10
+	if Global.money >= 120:
+		Global.money -= 120
+		current_cost = 120
 		if not placing:  # Start placing the tower
 			tower_instance = tower_scene.instantiate()  # Create an instance of the tower
 			placing = true  # Set placing to true
@@ -60,9 +60,9 @@ func _input(event):
 
 
 func _on_purplemage_pressed() -> void:
-	if Global.money >= 30:
-		Global.money -= 30
-		current_cost = 30
+	if Global.money >= 120:
+		Global.money -= 120
+		current_cost = 120
 		if not placing:  # Start placing the tower
 			tower_instance = PURPLEMAGE.instantiate()  # Create an instance of the tower
 			placing = true  # Set placing to true
@@ -72,9 +72,9 @@ func _on_purplemage_pressed() -> void:
 
 
 func _on_icemage_pressed() -> void:
-	if Global.money >= 20:
-		Global.money -= 20
-		current_cost = 20
+	if Global.money >= 200:
+		Global.money -= 200
+		current_cost = 200
 		if not placing:  # Start placing the tower
 			tower_instance = ICEMAGE.instantiate()  # Create an instance of the tower
 			placing = true  # Set placing to true

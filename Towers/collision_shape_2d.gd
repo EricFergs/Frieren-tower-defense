@@ -1,7 +1,7 @@
 extends CollisionShape2D
 
 var col = Color("#2ec4d96e")
-var tower_range = 400
+var tower_range = 250
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	shape.radius = tower_range

@@ -44,7 +44,7 @@ func attackEnemy():
 		$Iceattack.visible = true
 		var hit = $Iceattack/AttackRange.get_overlapping_bodies()
 		for e in hit:
-			e.ice_health -=  randf_range(0.0, 0.2)
+			e.ice_health -=  randf_range(0.0, 0.3)
 		if global_position.x < firstEnemy.global_position.x: # they're to the right
 			#rotation = 0
 			scale.x = -1.7

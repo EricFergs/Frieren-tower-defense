@@ -7,7 +7,7 @@ var enemies_in_range = []
 @onready var timer: Timer = $Timer
 @onready var area_2d: Area2D = $Area2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-var damage = 10
+var damage = 8
 
 var selected = false
 var placed = false
