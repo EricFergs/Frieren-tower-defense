@@ -30,10 +30,7 @@
 		{ "type": "redmage", "spawn_time": 19, "count" : 1},
 		{ "type": "redmage", "spawn_time": 18, "count" : 1},
 		{ "type": "redmage", "spawn_time": 17, "count" : 1},
-		{ "type": "yellowmage", "spawn_time": 10, "count" : 1},
-		{ "type": "yellowmage", "spawn_time": 9.8, "count" : 1},
-		{ "type": "yellowmage", "spawn_time": 9.6, "count" : 1},
-		{ "type": "yellowmage", "spawn_time": 9.4, "count" : 1},
+		{ "type": "yellowmage", "spawn_time": 10, "count" : 4},
 		{ "type": "yellowmage", "spawn_time": 9, "count" : 1},
 		{ "type": "yellowmage", "spawn_time": 8, "count" : 1},
 		{ "type": "yellowmage", "spawn_time": 7, "count" : 1},
@@ -59,19 +56,75 @@
 	  ]
 	},
 	{
-	  "wave_number": 4,
-	  "duration": 5,
+	  "wave_number": 5,
+	  "duration": 7,
 	  "enemies": [
 		{ "type": "wingedmage", "spawn_time": 5, "count" : 1},
 		{ "type": "wingedmage", "spawn_time": 4, "count" : 1},
 		{ "type": "wingedmage", "spawn_time": 3, "count" : 1},
 		{ "type": "wingedmage", "spawn_time": 2, "count" : 1},
-		{ "type": "wingedmage", "spawn_time": 1, "count" : 1},
+		{ "type": "wingedmage", "spawn_time": 1, "count" : 1}
 		
 	  ]
 	},
 	
-	
+	{
+		  "wave_number": 6,
+		  "duration": 20,
+		  "enemies": [
+			{ "type": "redmage", "spawn_time": 20, "count": 2},
+			{ "type": "bluemage", "spawn_time": 15, "count": 1},
+			{ "type": "yellowmage", "spawn_time": 10, "count": 2},
+			{ "type": "violetmage", "spawn_time": 5, "count": 1}
+		  ]
+		},
+		{
+		  "wave_number": 7,
+		  "duration": 25,
+		  "enemies": [
+			{ "type": "wingedmage", "spawn_time": 25, "count": 1},
+			{ "type": "redmage", "spawn_time": 20, "count": 2},
+			{ "type": "greenmage", "spawn_time": 15, "count": 1},
+			{ "type": "yellowmage", "spawn_time": 10, "count": 3},
+			{ "type": "bluemage", "spawn_time": 5, "count": 2}
+		  ]
+		},
+		{
+		  "wave_number": 8,
+		  "duration": 30,
+		  "enemies": [
+			{ "type": "violetmage", "spawn_time": 30, "count": 2},
+			{ "type": "wingedmage", "spawn_time": 25, "count": 2},
+			{ "type": "redmage", "spawn_time": 20, "count": 3},
+			{ "type": "bluemage", "spawn_time": 15, "count": 2},
+			{ "type": "yellowmage", "spawn_time": 10, "count": 4},
+			{ "type": "greenmage", "spawn_time": 5, "count": 1}
+		  ]
+		},
+		{
+		  "wave_number": 9,
+		  "duration": 35,
+		  "enemies": [
+			{ "type": "wingedmage", "spawn_time": 35, "count": 3},
+			{ "type": "violetmage", "spawn_time": 30, "count": 2},
+			{ "type": "redmage", "spawn_time": 25, "count": 4},
+			{ "type": "bluemage", "spawn_time": 20, "count": 3},
+			{ "type": "yellowmage", "spawn_time": 15, "count": 5},
+			{ "type": "greenmage", "spawn_time": 10, "count": 2}
+		  ]
+		},
+		{
+		  "wave_number": 10,
+		  "duration": 40,
+		  "enemies": [
+			{ "type": "violetmage", "spawn_time": 40, "count": 3},
+			{ "type": "wingedmage", "spawn_time": 35, "count": 4},
+			{ "type": "redmage", "spawn_time": 30, "count": 5},
+			{ "type": "bluemage", "spawn_time": 25, "count": 4},
+			{ "type": "yellowmage", "spawn_time": 20, "count": 6},
+			{ "type": "greenmage", "spawn_time": 15, "count": 3}
+		  ]
+		}
   ],
-  "wave_count" : 5
+  "wave_count": 10
 }

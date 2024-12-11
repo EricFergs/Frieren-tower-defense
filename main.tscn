@@ -1106,6 +1106,10 @@ offset_bottom = 99.0
 text = "Wave time: "
 label_settings = SubResource("LabelSettings_nut6n")
 
+[node name="spawnrates" type="Timer" parent="Waves"]
+wait_time = 0.3
+one_shot = true
+
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
 layout_mode = 3
@@ -1216,9 +1220,19 @@ polygon = PackedVector2Array(-11.9447, 11.4767, -11.9219, -12.3236, 10.0684, -11
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
+[node name="Button" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 1031.0
+offset_right = 181.0
+offset_bottom = 1081.0
+theme_override_font_sizes/font_size = 30
+text = "Give money"
+
 [connection signal="timeout" from="Waves/Timer" to="Waves" method="_on_timer_timeout"]
+[connection signal="timeout" from="Waves/spawnrates" to="Waves" method="_on_spawnrates_timeout"]
 [connection signal="pressed" from="Control/GridContainer/Frieren" to="Control" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/GridContainer/Purplemage" to="Control" method="_on_purplemage_pressed"]
 [connection signal="pressed" from="Control/GridContainer/Icemage" to="Control" method="_on_icemage_pressed"]
 [connection signal="body_entered" from="TowerAreas" to="Control" method="_on_tower_areas_body_entered"]
 [connection signal="body_exited" from="TowerAreas" to="Control" method="_on_tower_areas_body_exited"]
+[connection signal="pressed" from="Button" to="Control" method="_on_button_pressed"]

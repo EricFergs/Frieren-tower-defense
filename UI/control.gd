@@ -80,3 +80,7 @@ func _on_icemage_pressed() -> void:
 			placing = true  # Set placing to true
 			placeable = true
 			get_tree().current_scene.add_child(tower_instance) # Add the tower instance to the scene
+
+
+func _on_button_pressed() -> void:
+	Global.money += 1000

@@ -21,6 +21,7 @@ var types = {
 	"yellowmage":yellowmage,
 	"bluemage":bluemage
 }
+var enemySpawns = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,7 +48,8 @@ func _handleWaves(json):
 	var waveCount = json["wave_count"]
 	var wave = json["waves"]
 	
-	for i in waveCount:
+	for i in range(waveCount):
+		
 		timer.start(wave[i]["duration"])
 		currWave = wave[i]["wave_number"]
 		
@@ -57,22 +59,48 @@ func _handleWaves(json):
 		
 
 func _handleEnemies(enemies):
+	
 	for e in enemies:
+
 		events.append(e)
 		
 func _check_spawn_events():
 	if events:
 		while events[0]["spawn_time"] >= timer.get_time_left():
 			
-			var e_instance = ENEMY_1.instantiate()
-			var path = e_instance.get_child(0)
+
+			
 			var type = types[events[0]["type"]]
-			var path_enemy = type.instantiate()
-			path.add_child(path_enemy)
-			character_body_2d.add_child(e_instance)
+			var count = events[0]["count"]
+			
+			enemySpawns.append([type,count])
+			$spawnrates.start()
+			
 			events.pop_front()
 			if not events:
 				break
-	pass
+
+func _spawn_enemy():
+	var cur_e = enemySpawns[0]
+	var e_instance = ENEMY_1.instantiate()
+	var path = e_instance.get_child(0)
+	var type = cur_e[0]
+	var count = cur_e[1]
+	var path_enemy = type.instantiate()
+	path.add_child(path_enemy)
+	character_body_2d.add_child(e_instance)
+	count -= 1
+	if count == 0:
+		enemySpawns.pop_front()
+		
+	else:
+		
+		enemySpawns[0][1] = count
+		$spawnrates.start()
 	
 	
+	
+
+
+func _on_spawnrates_timeout() -> void:
+	_spawn_enemy()
