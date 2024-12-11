@@ -6,6 +6,7 @@ extends Control
 var placing = false
 var tower_instance: Node2D = null 	
 const PURPLEMAGE = preload("res://Towers/purplemage.tscn")
+const ICEMAGE = preload("res://Towers/icemage.tscn")
 
 var placeable = false
 var current_cost = 10
@@ -68,3 +69,14 @@ func _on_purplemage_pressed() -> void:
 			placeable = true
 			get_tree().current_scene.add_child(tower_instance) # Add the tower instance to the scene
 		# The tower follows the mouse in _process()
+
+
+func _on_icemage_pressed() -> void:
+	if Global.money >= 20:
+		Global.money -= 20
+		current_cost = 20
+		if not placing:  # Start placing the tower
+			tower_instance = ICEMAGE.instantiate()  # Create an instance of the tower
+			placing = true  # Set placing to true
+			placeable = true
+			get_tree().current_scene.add_child(tower_instance) # Add the tower instance to the scene

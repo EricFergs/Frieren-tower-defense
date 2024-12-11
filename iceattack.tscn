@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dr8wq7gwf8l02"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 200
+lifetime = 0.7
+speed_scale = 0.4
+explosiveness = 0.1
+randomness = 0.32
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(-1, 0)
+spread = 64.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.36
+initial_velocity_max = 161.07
+scale_amount_max = 5.0
+color = Color(0.772549, 1, 1, 1)
+hue_variation_max = 1.0
